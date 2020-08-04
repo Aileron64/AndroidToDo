@@ -1,6 +1,4 @@
-package thomascasse.androidforum;
-
-import androidx.appcompat.app.AppCompatActivity;
+package thomascasse.androidtodo;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -32,6 +30,7 @@ public class NewPostActivity extends Activity
             {
                 Post post = new Post();
                 post.setMessage(message.getText().toString());
+                Toast.makeText(NewPostActivity.this, "TEST", Toast.LENGTH_SHORT).show();
 
                 new DatabaseManager().addPost(post, new DatabaseManager.DataStatus()
                 {
@@ -45,6 +44,8 @@ public class NewPostActivity extends Activity
                     public void DataIsInserted()
                     {
                         Toast.makeText(NewPostActivity.this, "Post Added", Toast.LENGTH_LONG).show();
+                        finish();
+                        return;
                     }
 
                     @Override

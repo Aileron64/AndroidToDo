@@ -1,7 +1,9 @@
-package thomascasse.androidforum;
+package thomascasse.androidtodo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -37,16 +39,18 @@ public class RecyclerManager
 
             message = (TextView) itemView.findViewById(R.id.postMessage);
 
-//            itemView.setOnClickListener(new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View view)
-//                {
-//                    Intent showThread = new Intent(context, ThreadActivity.class);
-//                    showThread.putExtra("thomascasse.THREAD_KEY", key);
-//                    context.startActivity(showThread);
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent intent = new Intent(context, EditPostActivity.class);
+                    intent.putExtra("thomascasse.POST_KEY", key);
+                    intent.putExtra("thomascasse.POST_MESSAGE", message.getText().toString());
+
+                    context.startActivity(intent);
+                }
+            });
         }
 
         public void bind(Post post, String key)

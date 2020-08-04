@@ -1,12 +1,13 @@
-package thomascasse.androidforum;
+package thomascasse.androidtodo;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class MainActivity extends Activity
 {
     //ListView threadListView;
     private RecyclerView recyclerView;
-    private Button addPostBtn;
+    private FloatingActionButton addPostBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,7 +55,7 @@ public class MainActivity extends Activity
             }
         });
 
-        addPostBtn = (Button)findViewById(R.id.addPostBtn);
+        addPostBtn = (FloatingActionButton)findViewById(R.id.addPostBtn);
         addPostBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override

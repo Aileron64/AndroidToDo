@@ -1,4 +1,4 @@
-package thomascasse.androidforum;
+package thomascasse.androidtodo;
 
 public class Post
 {

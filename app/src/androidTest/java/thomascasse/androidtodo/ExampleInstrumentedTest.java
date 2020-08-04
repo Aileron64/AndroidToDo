@@ -1,4 +1,4 @@
-package thomascasse.androidforum;
+package thomascasse.androidtodo;
 
 import android.content.Context;
 

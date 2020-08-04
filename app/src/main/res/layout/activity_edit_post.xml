@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="thomascasse.androidtodo.NewPostActivity">
+    tools:context="thomascasse.androidtodo.EditPostActivity">
 
     <EditText
-        android:id="@+id/newPost"
-        android:layout_width="293dp"
-        android:layout_height="49dp"
+        android:id="@+id/editPost"
+        android:layout_width="298dp"
+        android:layout_height="175dp"
         android:layout_marginTop="232dp"
         android:ems="10"
         android:gravity="start|top"
@@ -20,14 +20,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addPostBtn"
+        android:id="@+id/editPostBtn"
         android:layout_width="223dp"
         android:layout_height="46dp"
-        android:text="Add"
+        android:layout_marginBottom="236dp"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newPost"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.15" />
+
+    <Button
+        android:id="@+id/deletePostBtn"
+        android:layout_width="223dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="172dp"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPostBtn"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

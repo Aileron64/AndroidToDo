@@ -1,6 +1,5 @@
-package thomascasse.androidforum;
+package thomascasse.androidtodo;
 
-import android.renderscript.Sampler;
 
 import androidx.annotation.NonNull;
 
@@ -11,8 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Console;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +70,30 @@ public class DatabaseManager
             public void onSuccess(Void aVoid)
             {
                 dataStatus.DataIsInserted();
+            }
+        });
+    }
+
+    public void updatePost(String key, Post post, final DataStatus dataStatus)
+    {
+        ref.child(key).setValue(post).addOnSuccessListener(new OnSuccessListener<Void>()
+        {
+            @Override
+            public void onSuccess(Void aVoid)
+            {
+                dataStatus.DataIsUpdated();
+            }
+        });
+    }
+
+    public void deletePost(String key, final DataStatus dataStatus)
+    {
+        ref.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>()
+        {
+            @Override
+            public void onSuccess(Void aVoid)
+            {
+                dataStatus.DataIsDeleted();
             }
         });
     }
