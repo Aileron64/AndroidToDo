@@ -1,4 +1,4 @@
-package thomascasse.androidtodo;
+package thomascasse.androidforum;
 
 import org.junit.Test;
 

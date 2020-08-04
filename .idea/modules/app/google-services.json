@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "212851249760",
+    "firebase_url": "https://androidforum-3e955.firebaseio.com",
+    "project_id": "androidforum-3e955",
+    "storage_bucket": "androidforum-3e955.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212851249760:android:7e711f28b463a22b4ca905",
+        "android_client_info": {
+          "package_name": "thomascasse.androidforum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212851249760-181011hbf2flno1oo1c953s0r0850r8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thomascasse.androidforum",
+            "certificate_hash": "73c6cb485d441ce2854f2a86b5c57b27faa2ef6e"
+          }
+        },
+        {
+          "client_id": "212851249760-b1qqar0nq276ei52s1f369sdccj1d5ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmQOchox9ByRSmdBfihDWEv_njtp-Z50Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212851249760-b1qqar0nq276ei52s1f369sdccj1d5ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
