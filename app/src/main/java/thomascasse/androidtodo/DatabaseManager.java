@@ -4,6 +4,8 @@ package thomascasse.androidtodo;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +20,8 @@ public class DatabaseManager
 {
     private FirebaseDatabase database;
     private DatabaseReference ref;
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
     private List<Post> posts = new ArrayList<>();
 
@@ -32,7 +36,9 @@ public class DatabaseManager
     public DatabaseManager()
     {
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference("posts");
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        ref = database.getReference( user.getUid() + "/posts");
     }
 
     public void loadPosts(final DataStatus dataStatus)

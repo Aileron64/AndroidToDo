@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -15,7 +17,9 @@ public class MainActivity extends Activity
 {
     //ListView threadListView;
     private RecyclerView recyclerView;
-    private FloatingActionButton addPostBtn;
+    private Button addPostBtn;
+    private Button logoutBtn;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,6 +27,7 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        auth = FirebaseAuth.getInstance();
         recyclerView = (RecyclerView) findViewById(R.id.threadView);
 
         new DatabaseManager().loadPosts(new DatabaseManager.DataStatus()
@@ -55,37 +60,30 @@ public class MainActivity extends Activity
             }
         });
 
-        addPostBtn = (FloatingActionButton)findViewById(R.id.addPostBtn);
+        addPostBtn = (Button)findViewById(R.id.addPostBtn);
         addPostBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Intent newPostActivity = new Intent(getApplicationContext(), NewPostActivity.class);
-                startActivity(newPostActivity);
+                Intent intent = new Intent(getApplicationContext(), NewPostActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutBtn = (Button)findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                auth.signOut();
+                RecyclerManager.logout();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
 }
 
-//        threadListView = (ListView)findViewById(R.id.threadList);
-//
-//        Thread[] testValues = new Thread[125];
-//        for(int i = 0; i < testValues.length; i++)
-//        {
-//            testValues[i] = new Thread("Anonymous", "Value: " + i, "");
-//        }
-//
-//        OldThreadAdapter adapter = new OldThreadAdapter(this, testValues);
-//        threadListView.setAdapter(adapter);
-//
-//        threadListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-//        {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
-//            {
-//                Intent showThread = new Intent(getApplicationContext(), ThreadActivity.class);
-//                showThread.putExtra("thomascasse.THREAD_ID", i);
-//                startActivity(showThread);
-//            }
-//        });

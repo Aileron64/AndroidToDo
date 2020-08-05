@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.List;
 
 public class RecyclerManager
@@ -18,8 +21,14 @@ public class RecyclerManager
     private Context context;
     private PostAdapter postAdapter;
 
+    private FirebaseAuth auth;
+    private static FirebaseUser user;
+
     public void setConfig(RecyclerView recyclerView, Context context, List<Post> posts, List<String> keys)
     {
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         this.context = context;
         this.postAdapter = new PostAdapter(posts, keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -89,5 +98,10 @@ public class RecyclerManager
         {
             return posts.size();
         }
+    }
+
+    public static void logout()
+    {
+        user = null;
     }
 }
