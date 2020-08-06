@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CFCECE"
+    android:background="#595959"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/threadView"
         android:layout_width="match_parent"
         android:layout_height="622dp"
-        android:background="#ECECEC"
+        android:background="#518154"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,20 +44,22 @@
         android:layout_width="236dp"
         android:layout_height="78dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="1dp"
         android:text="@string/new_post"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/threadView" />
 
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="129dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="1dp"
         android:text="@string/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addPostBtn"
         app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/threadView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

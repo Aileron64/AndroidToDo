@@ -13,6 +13,6 @@
         android:layout_marginBottom="0dp"
         android:background="#F6ECC8"
         android:includeFontPadding="false"
-        android:padding="45dp"
+        android:padding="25dp"
         android:textSize="24sp" />
 </RelativeLayout>
