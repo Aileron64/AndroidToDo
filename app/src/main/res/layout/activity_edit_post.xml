@@ -4,42 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="thomascasse.androidtodo.EditPostActivity">
 
-    <EditText
-        android:id="@+id/editPost"
-        android:layout_width="298dp"
-        android:layout_height="175dp"
-        android:layout_marginTop="232dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/editPostBtn"
-        android:layout_width="223dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="236dp"
-        android:text="Update"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shadow_border"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newPost"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/deletePostBtn"
-        android:layout_width="223dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="172dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPostBtn"
-        app:layout_constraintVertical_bias="1.0" />
+        <EditText
+            android:id="@+id/editPost"
+            android:layout_width="298dp"
+            android:layout_height="175dp"
+            android:layout_marginBottom="25dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/editPostBtn"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginBottom="20dp"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/deletePostBtn"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="Delete" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

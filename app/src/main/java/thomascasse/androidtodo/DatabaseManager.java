@@ -53,9 +53,9 @@ public class DatabaseManager
 
                 for(DataSnapshot keyNode : dataSnapshot.getChildren())
                 {
-                    keys.add(keyNode.getKey());
+                    keys.add(0, keyNode.getKey());
                     Post post = keyNode.getValue(Post.class);
-                    posts.add(post);
+                    posts.add(0, post);
                 }
 
                 dataStatus.DataIsLoaded(posts, keys);
