@@ -15,5 +15,5 @@
         android:elevation="16dp"
         android:includeFontPadding="false"
         android:padding="25dp"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 </RelativeLayout>
